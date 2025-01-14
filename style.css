@@ -1,0 +1,431 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    font-size: 10px;
+}
+
+@media (min-width: 769px) {
+    .spOnly {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .pcOnly {
+        display: none;
+    }
+}
+
+
+/* ハンバーガーのスタイル */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+}
+
+/* 閉じるボタン (×マーク) */
+.close-button {
+    display: none;
+    /* 初期状態で非表示 */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    /* ×マークの幅 */
+    height: 2px;
+    /* 太さ */
+    background: #333;
+    /* 色 */
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+}
+
+.close-button::before {
+    transform: rotate(45deg);
+    /* 斜め線1 */
+}
+
+.close-button::after {
+    transform: rotate(-45deg);
+    /* 斜め線2 */
+}
+
+/* メニュー表示時に閉じるボタンを表示 */
+.nav-menu.open .close-button {
+    display: block;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        /* モバイルで表示 */
+    }
+}
+
+/* オーバーレイ（背景のフェードイン） */
+.nav-overlay {
+    display: none;
+    /* 初期状態で非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 半透明の黒背景 */
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+/* ナビゲーションメニュー */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -500px;
+        /* 初期状態で画面外に配置 */
+        width: 300px;
+        height: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        transition: right 0.3s ease;
+        /* スライドインの動き */
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+    .nav-menu ul {
+        display: flex;
+        /* デスクトップ用 */
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-menu ul li {
+        margin: 0 0 20px;
+        opacity: 0;
+        /* transform: translateY(20px); */
+        /* 少し下にずらす */
+        /* animation: fadeIn 0.5s ease forwards;*/
+        /* フェードイン＆上にスライド */
+    }
+
+    /* アニメーションの順番を調整 */
+    /*.nav-menu ul li:nth-child(1) {
+        animation-delay: 1.5s;
+    }
+
+    .nav-menu ul li:nth-child(2) {
+        animation-delay: 1.7s;
+    }
+
+    .nav-menu ul li:nth-child(3) {
+        animation-delay: 1.9s;
+    }*/
+}
+
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* メニュー表示時 */
+.nav-menu.open {
+    right: 0;
+    /* スライドイン */
+}
+
+.nav-overlay.open {
+    display: block;
+    /* 表示 */
+    opacity: 1;
+    /* フェードイン */
+}
+
+/* ヘッダー全体 */
+header {
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    max-width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#hero {
+    background: #ddd;
+    text-align: center;
+    padding: 100px 20px;
+    padding: 0;
+}
+
+#hero p {
+    font-size: 2em;
+}
+
+@media (min-width: 769px) {
+    #hero {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+    }
+
+    #hero .container {
+        display: flex;
+        /* 子要素を横並びに */
+        justify-content: space-between;
+        /* テキストと画像の間に余白を配置 */
+        align-items: center;
+        /* 高さを揃える */
+        max-width: 980px;
+        margin: 0 auto;
+        /* 画面中央に配置 */
+        height: 100%;
+        /* 親要素の高さを継承 */
+        padding: 0 20px;
+        /* 左右に少し余白 */
+        ;
+    }
+
+    #hero .container div {
+        max-width: 50%;
+        /* テキスト部分の幅を調整 */
+    }
+
+    #hero h2 {
+        font-size: 4em;
+        margin-bottom: 10px;
+    }
+
+    #hero img {
+        max-width: 50%;
+        /* 画像部分の幅を調整 */
+        height: auto;
+        /* 縦横比を維持 */
+        object-fit: cover;
+        /* 画像が親要素に収まるように切り取り */
+        margin-top: -55px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        padding: 20px 0 0;
+        overflow: hidden;
+        height: 500px;
+    }
+
+    #hero img {
+        max-width: 70%;
+        margin-top: 20px;
+    }
+
+    #hero h2 {
+        font-size: 3em;
+        margin: 0;
+    }
+}
+
+#features,
+#how-to-use,
+#download {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#features h2,
+#how-to-use h2,
+#download h2 {
+    margin-bottom: 1.5em;
+    font-size: 3em;
+}
+
+#features h3,
+#how-to-use h3,
+#download h3 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#features p,
+#how-to-use p,
+#download p,
+ol li {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+
+.feature-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#how-to-use {
+    padding: 50px 20px;
+}
+
+#how-to-use h2 {
+    margin-bottom: 30px;
+}
+
+#how-to-use .text {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    #how-to-use .text {
+        width: 65%;
+        margin-right: 5%;
+    }
+}
+
+#how-to-use .container {
+    max-width: 980px;
+    margin: 0 auto;
+    /* 中央揃え */
+}
+
+#how-to-use .step {
+    margin-top: 5em;
+}
+
+@media (min-width: 769px) {
+    #how-to-use .step {
+        padding: 20px;
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    #how-to-use ol {
+        padding: 0;
+        margin: 0 0 0 6%;
+    }
+}
+
+#how-to-use ol li {
+    margin-top: 1em;
+}
+
+#how-to-use .step .image img {
+    max-width: 100%;
+}
+
+@media (max-width: 769px) {
+    #how-to-use .step .image {
+        margin-top: 3em;
+    }
+}
+
+@media (min-width: 768px) {
+    #how-to-use .step .image {
+        text-align: right;
+        width: 30%;
+    }
+}
+
+/* スマホ対応 (1カラム) */
+@media (max-width: 768px) {
+    #how-to-use .step {
+        flex: 1 1 100%;
+        /* 全幅表示 */
+    }
+}
+
+#download img {
+    width: 150px;
+}
+
+@media (min-width: 769px) {
+    #download img:hover {
+        opacity: .7;
+    }
+}
+
+footer {
+    background: #f8f8f8;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
