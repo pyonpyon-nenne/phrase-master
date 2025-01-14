@@ -1,102 +1,140 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フレーズマスター - アプリ概要</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            position: relative;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        h2, h3 {
-            color: #4CAF50;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: white;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-        img{
-            max-width: 300px;
-        }
-    </style>
+    <title>オボエルフレーズ-隙間時間で英語のフレーズを暗記-</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>フレーズマスター - アプリ概要</h1>
+        <div class="container">
+            <h1 class="logo">オボエルフレーズ<span class="pcOnly">-隙間時間で英語のフレーズを暗記-</span></h1>
+            <button class="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-overlay"></div>
+            <nav class="nav-menu">
+                <button class="close-button" aria-label="閉じるメニュー"></button>
+                <ul>
+                    <li><a href="#features">特徴</a></li>
+                    <li><a href="#how-to-use">使い方</a></li>
+                    <li><a href="#download">ダウンロード</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>アプリの概要</h2>
-            <p>
-                「フレーズマスター」は、日常英会話やビジネス英語の学習を効率化するために設計されたアプリです。主に次の機能を提供します：
-            </p>
-            <ul>
-                <li><strong>フレーズ登録機能</strong>: あなたが覚えたいフレーズを自由に登録できます。</li>
-                <li><strong>穴埋めクイズ</strong>: 穴埋め形式のクイズでフレーズを効率的に学習。</li>
-                <li><strong>発音練習</strong>: 登録したフレーズを音声で確認し、リスニングや発音スキルを向上。</li>
-                <li><strong>習得済み管理</strong>: 学習済みフレーズを自動的に分類し、進捗を管理。</li>
-            </ul>
-        </section>
-        <section>
-            <h2>スクリーンショット</h2>
-            <p>以下はアプリのスクリーンショットです:</p>
-            <div>
-                <h3>1. フレーズ登録画面</h3>
-                <img src="2-1.png" alt="フレーズ登録画面">
-                <p>自分の覚えたいフレーズを簡単に登録することができます。</p>
-            </div>
-            <div>
-                <h3>2. 穴埋めクイズ画面</h3>
-                <img src="3.png" alt="穴埋めクイズ画面">
-                <p>穴埋め形式で楽しくフレーズを学べます。</p>
-            </div>
-            <div>
-                <h3>3. 習得済み一覧画面</h3>
-                <img src="4.png" alt="習得済み一覧画面">
-                <p>学習済みフレーズを一覧で確認し、自分の進捗を把握できます。</p>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <div>
+                    <h2>シンプルに覚えるだけ</h2>
+                    <p>効率良くフレーズを暗記しよう</p>
+                </div>
+                <img src="img/hero.png" alt="オボエルフレーズのイメージ">
             </div>
         </section>
-        <section>
-            <div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmZzT5jVS65GxKDH8NIec7gASYNBocxQIbnz4mgzKlA37NCg/viewform?usp=sharing">お問い合わせ</a>
-             <br><a href="privacypolicy.html">プライバシーポリシー</a>
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="container">
+                <h2>特徴</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <img src="img/photo1.png" alt="特徴1">
+                        <h3>短時間でも学習できる</h3>
+                        <p>1分からでも覚えることに集中できる</p>
+                    </div>
+                    <div class="feature">
+                        <img src="img/photo2.png" alt="特徴2">
+                        <h3>シンプルで直感的に操作できる</h3>
+                        <p>覚えることに集中するため<br>無駄を省いたシンプル設計</p>
+                    </div>
+                    <div class="feature">
+                        <img src="img/photo3.png" alt="特徴3">
+                        <h3>効率よく暗記できる</h3>
+                        <p>覚えていないフレーズを優先的に<br>クイズを出題</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section id="how-to-use">
+            <h2>使い方</h2>
+            <div class="container">
+                <!-- ステップカード -->
+                <div class="steps">
+                    <div class="step">
+                        <div class="text">
+                            <h3>フレーズ登録</h3>
+                            <ol>
+                                <li>クイズに出題される問題を「穴埋め」か「全文暗記（入力）」か選択します。両方選択することも可能です。</li>
+                                <li>クイズに出題する問題文を入力します。</li>
+                                <li>（穴埋めの場合）穴埋めにしたい単語をタップして選択します。</li>
+                                <li>日本語の意味を入力します。</li>
+                                <li>発音や気がついたことなどメモを入力します。（空欄でも可）</li>
+                            </ol>
+                        </div>
+                        <div class="image">
+                            <img src="img/img1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text">
+                            <h3>クイズ</h3>
+                            <ol>
+                                <li>穴埋めクイズ-フレーズ登録時に選択した穴埋め部分がクイズになります。</li>
+                                <li>全文入力クイズ-フレーズ全文を入力するクイズです。</li>
+                            </ol>
+                        </div>
+                        <div class="image">
+                            <img src="img/img2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text">
+                            <h3>登録フレーズの管理</h3>
+                            <ol>
+                                <li>登録したフレーズはここで管理します。</li>
+                                <li>クイズで３回以上正解すると習得済みに移動します。</li>
+                                <li>左へスライドで再編集と削除、右へスライドで未習得と習得済みに移動できます。</li>
+                            </ol>
+                        </div>
+                        <div class="image">
+                            <img src="img/img3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download">
+            <div class="container">
+                <h2>今すぐ始めよう</h2>
+                <a href="https://apps.apple.com/us/app/%E3%82%AA%E3%83%9C%E3%82%A8%E3%83%AB%E3%83%95%E3%83%AC%E3%83%BC%E3%82%BA/id6739454790"
+                    target="_blank"><img src="img/appstore.png" alt=""></a>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 オボエルフレーズ. All rights reserved.</p>
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdmZzT5jVS65GxKDH8NIec7gASYNBocxQIbnz4mgzKlA37NCg/viewform?usp=sharing">お問い合わせ</a>｜<a
+                href="privacypolicy.html">プライバシーポリシー</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
+
 </html>
